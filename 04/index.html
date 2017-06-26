@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.main_container {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.footer_bg,
+.footertile_bg,
+.header_bg,
+.header_tile {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+.header_tile {
+  background: transparent url('headertile_bg.cache.jpg') repeat-x;
+ }
+.header_bg {
+   background: transparent url('header_bg.cache.jpg') no-repeat top right;
+   right: 100px;
+   top: 35px;
+}
+.footertile_bg {
+  background: transparent url('footertile_bg.cache.png') repeat-x 120px bottom;
+  left: 899px;
+}
+.footer_bg {
+  background: transparent url('footer_bg.cache.png') no-repeat bottom left;
+}
+</style>
+</head>
+<body>
+  <div class="main_container">
+    <div class="header_tile"></div>
+    <div class="header_bg"></div>
+    <div class="footertile_bg"></div>
+    <div class="footer_bg"></div>
+  </div>
+</body>
+</html>
