@@ -1,1 +1,1 @@
-# iGoogle Tea House Theme
+# Google Tea House Theme
