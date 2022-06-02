@@ -13,9 +13,9 @@ body {
   overflow: hidden;
 }
 .canvas_tile,
+.sun_tile,
 .footer_bg,
 .footertile_bg,
-.header_bg,
 .header_tile {
   width: 100%;
   height: 100%;
@@ -23,15 +23,15 @@ body {
 }
 .canvas_tile {
   background: transparent url('canvastile_bg.cache.png') repeat;
-  top: 200px;
   background-size: 50px 50px;
 }
 .header_tile {
   background: transparent url('headertile_bg.cache.png') repeat-x;
+  bottom: 0;
   background-size: 25px 550px;
 }
-.header_bg {
-  background: transparent url('header_bg.cache.png') no-repeat top;
+.sun_tile {
+  background: transparent url('header_bg.cache.png') no-repeat 300px 25px;
   background-size: 49.5px 49.5px;
 }
 .footertile_bg {
@@ -47,12 +47,12 @@ body {
 </style>
 </head>
 <body>
-  <div class="main_container">
-     <div class="canvas_tile"></div>
-     <div class="header_tile"></div>
-     <div class="header_bg"></div>
-     <div class="footertile_bg"></div>
-     <div class="footer_bg"></div>
-  </div>
+ <div class="main_container">
+   <div class="canvas_tile"></div>
+   <div class="header_tile"></div>
+   <div class="footertile_bg"></div>
+   <div class="footer_bg"></div>
+   <div class="sun_tile"></div>
+ </div>
 </body>
 </html>
