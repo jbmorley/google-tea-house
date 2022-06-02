@@ -15,7 +15,7 @@ HOURS = ["00", "02", "04", "06", "08", "10", "12", "14", "16", "18", "20", "22"]
 
 def generate(width, height):
     scale = 2
-    output_directory = os.path.join(RENDERS_DIRECTORY, "%dx%d" % (width, height), "frames")
+    output_directory = os.path.join(RENDERS_DIRECTORY, "%dx%d" % (width, height))
     if not os.path.exists(output_directory):
         os.makedirs(output_directory)
     os.chdir(output_directory)
