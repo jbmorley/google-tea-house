@@ -21,7 +21,7 @@ def generate(width, height):
     os.chdir(output_directory)
 
     for hour in HOURS:
-        html_path = os.path.join(HTML_DIRECTORY, hour, "index.html")
+        html_path = os.path.join(HTML_DIRECTORY, hour, "index_2x.html")
         url = "file://%s" % (html_path, )
         subprocess.check_call(["/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
                                "--headless",
@@ -32,9 +32,9 @@ def generate(width, height):
 
 DIMENSIONS = [
     (1680, 1050),
+    (1680, 1050),
     (3360, 2100),
     (6400, 2666),
-    (6720, 4200),
 ]
 
 
