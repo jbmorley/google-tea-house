@@ -12,6 +12,12 @@ RENDERS_DIRECTORY = os.path.join(ROOT_DIRECTORY, "renders")
 
 HOURS = ["00", "02", "04", "06", "08", "10", "12", "14", "16", "18", "20", "22"]
 
+DIMENSIONS = [
+    (1680, 1050),
+    (2560, 1600),
+    (3840, 1600),
+]
+
 
 def generate(width, height):
     scale = 2
@@ -28,14 +34,6 @@ def generate(width, height):
                                "--screenshot=%s.png" % (hour, ),
                                "--window-size=%d,%d" % (width / 2, height / 2),
                                url])
-
-
-DIMENSIONS = [
-    (1680, 1050),
-    (2560, 1600),
-    (3360, 2100),
-    (3840, 1600),
-]
 
 
 def main():
