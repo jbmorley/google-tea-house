@@ -1,6 +1,6 @@
 # Google Tea House Theme
 
-![Dynamic wallpaper preview](preview.png)
+![Dynamic wallpaper preview](renders/1680x1050/preview.png)
 
 ## Downloads
 

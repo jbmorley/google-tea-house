@@ -3,6 +3,7 @@
 import argparse
 import os
 import subprocess
+import tempfile
 
 
 SCRIPTS_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
@@ -26,6 +27,7 @@ def generate(width, height):
         os.makedirs(output_directory)
     os.chdir(output_directory)
 
+    # Generate the individual frames.
     for hour in HOURS:
         html_path = os.path.join(HTML_DIRECTORY, hour, "index_2x.html")
         url = "file://%s" % (html_path, )
@@ -34,6 +36,23 @@ def generate(width, height):
                                "--screenshot=%s.png" % (hour, ),
                                "--window-size=%d,%d" % (width / 2, height / 2),
                                url])
+
+    # Generate preview.
+    with tempfile.TemporaryDirectory() as temporary_directory:
+        slice_width = width / 12
+        os.chdir(temporary_directory)
+        for hour in HOURS:
+            image_path = os.path.join(output_directory, "%s.png" % (hour, ))
+            print(image_path)
+            command = ["convert", image_path,
+                       "+repage",
+                       "-crop", "%dx%d+%d+0" % (slice_width, height, slice_width * int(hour) / 2),
+                       "+repage",
+                       "%s.png" % (hour, )]
+            subprocess.check_call(command)
+        slices = ["%s.png" % (hour, ) for hour in HOURS]
+        command = ["convert"] + slices + ["+append", os.path.join(output_directory, "preview.png")]
+        subprocess.check_call(command)
 
 
 def main():
