@@ -4,4 +4,6 @@
 
 ## Downloads
 
-- [3360 x 2100](renders/3360x2100/dynamic.heic)
+- [1680 x 1050](renders/1680x1050/dynamic.heic)
+- [2560 x 1600](renders/2560x1600/dynamic.heic)
+- [3840 x 1600](renders/3840x1600/dynamic.heic)
